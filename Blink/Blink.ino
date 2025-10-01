@@ -21,20 +21,47 @@
 
   https://docs.arduino.cc/built-in-examples/basics/Blink/
 */
-const int rLEDPin = 3;
-const int gLEDPin = 4;
-const int bLEDPin = 5;
+const int rLEDPin = 9;
+const int gLEDPin = 11;
+const int bLEDPin = 10;
+int state=0;
+const int push=2;
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(rLEDPin, OUTPUT);
-  pinMode(gLEDPin, OUTPUT);
-  pinMode(bLEDPin, OUTPUT);
+  /*pinMode(gLEDPin, OUTPUT);
+  pinMode(bLEDPin, OUTPUT);*/
+  pinMode(push,INPUT);
 }
 
 // the loop function runs over and over again forever
 void loop() {
-  digitalWrite(rLEDPin, LOW);
+
+  state = digitalRead(push);
+  if(state==1)
+  {
+    digitalWrite(rLEDPin,0);
+  }
+  else{
+    digitalWrite(rLEDPin,1);
+  }
+  /*digitalWrite(rLEDPin, 0);
+  digitalWrite(gLEDPin, 1);
+  digitalWrite(bLEDPin, 1);
+  delay(8000);  /*
+  
+  digitalWrite(rLEDPin, 0);
+  digitalWrite(gLEDPin, 0);
+  digitalWrite(bLEDPin, 1);
+  delay(1000);  
+
+  digitalWrite(rLEDPin, 1);
+  digitalWrite(gLEDPin, 0);
+  digitalWrite(bLEDPin, 1);
+  delay(5000);  
+
+  /*digitalWrite(rLEDPin, LOW);
   digitalWrite(gLEDPin, HIGH);
   digitalWrite(bLEDPin, HIGH); 
   delay(1000); 
@@ -62,5 +89,5 @@ void loop() {
   digitalWrite(rLEDPin, HIGH);
   digitalWrite(gLEDPin, HIGH);
   digitalWrite(bLEDPin, HIGH);
-  delay(1000);
+  delay(1000);*/
 }
