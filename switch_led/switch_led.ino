@@ -30,6 +30,7 @@ void loop() {
   if(state==1&&!pressbutton){
     ledcolor = ledcolor + 1;
     pressbutton=true;
+    //Serial.print("on");
   }
   if(state==0&&pressbutton){
     
@@ -46,42 +47,77 @@ void loop() {
     digitalWrite(rLED,0);
     digitalWrite(bLED,1);
     digitalWrite(gLED,1);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==2){
     currentcolor="Green";
     digitalWrite(rLED,1);
     digitalWrite(bLED,0);
     digitalWrite(gLED,1);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==3){
     currentcolor="Blue";
     digitalWrite(rLED,1);
     digitalWrite(bLED,1);
     digitalWrite(gLED,0);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==4){
     currentcolor="purple";
     digitalWrite(rLED,0);
     digitalWrite(bLED,0);
     digitalWrite(gLED,1);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==5){
     currentcolor="Yellow";
     digitalWrite(rLED,0);
     digitalWrite(bLED,1);
     digitalWrite(gLED,0);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==6){
     currentcolor="Cyan";
     digitalWrite(rLED,1);
     digitalWrite(bLED,0);
     digitalWrite(gLED,0);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==7){
     currentcolor="White";
     digitalWrite(rLED,0);
     digitalWrite(bLED,0);
     digitalWrite(gLED,0);
+        delay(1000);
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    delay(1000);
   }
   else if(ledcolor==8){
     ledcolor=0;
