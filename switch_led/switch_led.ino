@@ -23,9 +23,17 @@ void loop() {
   state=digitalRead(buttonPin);
   Serial.print("currentcolor:");
   Serial.println(currentcolor);
-  if(state==0){
+  /*if(state==0){
     ledcolor = ledcolor + 1;
     delay(100);
+  }*/
+  if(state==1&&!pressbutton){
+    ledcolor = ledcolor + 1;
+    pressbutton=true;
+  }
+  if(state==0&&pressbutton){
+    
+    pressbutton=false;
   }
   if(ledcolor==0){
     currentcolor="LED off";
