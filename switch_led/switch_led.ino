@@ -7,7 +7,7 @@ int state=0;
 int ledcolor=0;
 
 bool pressbutton= 0;
-String currentcolor="led";
+//String currentcolor="led";
 
 void setup() {
   // put your setup code here, to run once:
@@ -21,8 +21,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   state=digitalRead(buttonPin);
-  Serial.print("currentcolor:");
-  Serial.println(currentcolor);
+  //Serial.print("currentcolor:");
+  //Serial.println(currentcolor);
   /*if(state==0){
     ledcolor = ledcolor + 1;
     delay(100);
@@ -33,91 +33,58 @@ void loop() {
     //Serial.print("on");
   }
   if(state==0&&pressbutton){
-    
     pressbutton=false;
   }
-  if(ledcolor==0){
-    currentcolor="LED off";
+
+    if(ledcolor==0){
+    //currentcolor="LED off";
     digitalWrite(rLED,1);
     digitalWrite(bLED,1);
     digitalWrite(gLED,1);
+    delay(1000);
+    
   }
   else if(ledcolor==1){
-    currentcolor="Red";
+   //currentcolor="Red";
     digitalWrite(rLED,0);
     digitalWrite(bLED,1);
     digitalWrite(gLED,1);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==2){
-    currentcolor="Green";
+    //currentcolor="Green";
     digitalWrite(rLED,1);
     digitalWrite(bLED,0);
     digitalWrite(gLED,1);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==3){
-    currentcolor="Blue";
+    //currentcolor="Blue";
     digitalWrite(rLED,1);
     digitalWrite(bLED,1);
     digitalWrite(gLED,0);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==4){
-    currentcolor="purple";
+   //currentcolor="purple";
     digitalWrite(rLED,0);
     digitalWrite(bLED,0);
     digitalWrite(gLED,1);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==5){
-    currentcolor="Yellow";
+    //currentcolor="Yellow";
     digitalWrite(rLED,0);
     digitalWrite(bLED,1);
     digitalWrite(gLED,0);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==6){
-    currentcolor="Cyan";
+    //currentcolor="Cyan";
     digitalWrite(rLED,1);
     digitalWrite(bLED,0);
     digitalWrite(gLED,0);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==7){
-    currentcolor="White";
+    //currentcolor="White";
     digitalWrite(rLED,0);
     digitalWrite(bLED,0);
     digitalWrite(gLED,0);
-        delay(1000);
-    digitalWrite(rLED,1);
-    digitalWrite(bLED,1);
-    digitalWrite(gLED,1);
-    delay(1000);
   }
   else if(ledcolor==8){
     ledcolor=0;
