@@ -5,10 +5,13 @@ const int gLED=5;
 
 int state=0;
 int ledcolor=0;
+int ledState=0;
 
 bool pressbutton= 0;
 String currentcolor="led";
 
+unsigned long previousMillis=0;
+const long interval=1000;
 void setup() {
   // put your setup code here, to run once:
   pinMode(buttonPin,INPUT);
@@ -35,7 +38,16 @@ void loop() {
   if(state==0&&pressbutton){
     pressbutton=false;
   }
-
+  unsigned long currentMillis= millis();
+  if(currentMillis-previousMillis>= interval){
+    previousMillis=currentMillis;
+    if(ledState==LOW){
+      ledState=1;
+    }
+    else{
+      ledState=0;
+    }
+  }
   if(ledcolor==0){
     currentcolor="LED off";
     digitalWrite(rLED,1);
@@ -46,45 +58,88 @@ void loop() {
   }
   else if(ledcolor==1){
     currentcolor="Red";
+    if(ledState==0){
     digitalWrite(rLED,0);
     digitalWrite(bLED,1);
     digitalWrite(gLED,1);
+    }
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==2){
     currentcolor="Green";
+    if(ledState==0){
     digitalWrite(rLED,1);
     digitalWrite(bLED,0);
+    digitalWrite(gLED,1);}
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
     digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==3){
     currentcolor="Blue";
+    if(ledState==0){
     digitalWrite(rLED,1);
     digitalWrite(bLED,1);
-    digitalWrite(gLED,0);
+    digitalWrite(gLED,0);}
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==4){
    currentcolor="purple";
+   if(ledState==0){
     digitalWrite(rLED,0);
     digitalWrite(bLED,0);
+    digitalWrite(gLED,1);}
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
     digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==5){
     currentcolor="Yellow";
+    if(ledState==0){
     digitalWrite(rLED,0);
     digitalWrite(bLED,1);
-    digitalWrite(gLED,0);
+    digitalWrite(gLED,0);}
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==6){
     currentcolor="Cyan";
+    if(ledState==0){
     digitalWrite(rLED,1);
     digitalWrite(bLED,0);
-    digitalWrite(gLED,0);
+    digitalWrite(gLED,0);}
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==7){
     currentcolor="White";
+    if(ledState==0){
     digitalWrite(rLED,0);
     digitalWrite(bLED,0);
-    digitalWrite(gLED,0);
+    digitalWrite(gLED,0);}
+    else{
+    digitalWrite(rLED,1);
+    digitalWrite(bLED,1);
+    digitalWrite(gLED,1);
+    }
   }
   else if(ledcolor==8){
     ledcolor=0;
